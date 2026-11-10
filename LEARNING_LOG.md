@@ -61,6 +61,6 @@ the most accurate.
 
 **My mistake:** my first comparison used images of different sizes, which isn't fair. I re-ran it at the same size and the ranking stayed the same.
 
-**Open question:** Open question: the daylight edit (made from the styled render) moved things closer to my sketch than the styled render itself. Interesting.
+**Open question:** the daylight edit (made from the styled render) moved things closer to my sketch than the styled render itself. Interesting.
 
 **Next:** set up ComfyUI and try ControlNet.
