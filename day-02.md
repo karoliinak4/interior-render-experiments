@@ -51,17 +51,14 @@ I described my Day 1 sketch in words (window, three shelves, sofa with round cus
 **What I learned:**
 - The mistakes repeated, so they look like the model's habits, not bad luck. Counting things (three shelves) seems hard for it.
 - The more detailed the prompt, the less the seed changes the layout.
-- But words alone can't put things where I want them. For an architect that's not enough, the sketch has to go into the model as an image.
+- But words alone can't put things where I want them. The sketch has to go into the model as an image.
 
-**About measuring:** I tried the Day 1 line measurement on these images too, and it gave results that didn't match what I saw. The camera wasn't fixed and the wooden floor texture added a lot of noise. So that measurement only makes sense when the render starts from the sketch and the camera stays the same. I'm only using my eyes for today's tests.
 
 ### Checking what I need for next time
 
-Before paying for a plan I checked the Comfy Cloud model library. It has what I need:
+After my research I started looking for some models from the Comfy Cloud model library. It has what I need, I will learn as I go:
 - **Juggernaut-XL v9**: a photorealistic SDXL model
-- **ControlNet depth** and **ControlNet canny** for SDXL (both from the same maker, so it's a fair comparison)
+- **ControlNet depth** and **ControlNet canny** for SDXL
 - **Depth Anything**: makes a depth map from my sketch
-
-**Next:** give the model my sketch as an image and compare depth vs. canny ControlNet. Can it keep my geometry AND look realistic?
 
 [← Back to the front page](README.md)
