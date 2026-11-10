@@ -64,4 +64,4 @@ Before paying for a plan I checked the Comfy Cloud model library. It has what I 
 
 **Next:** give the model my sketch as an image and compare depth vs. canny ControlNet. Can it keep my geometry AND look realistic?
 
-[← Back to the learning log](LEARNING_LOG.md)
+[← Back to the front page](README.md)
