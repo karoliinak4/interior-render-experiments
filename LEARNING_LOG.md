@@ -6,7 +6,7 @@ What I tried, what broke, what I learned.
 
 ## Day 1 — 9 Nov 2026
 
-**Goal:** I wanted to see what happens when I give the AI my own living room and a simple drawing.
+**Goal:** I wanted to see what happens when I give an AI interior renderer a photo of my own living room and a simple drawing.
 
 **Tool:** MyArchitectAI (free trial, 6 of 10 renders used)
 
@@ -14,22 +14,22 @@ What I tried, what broke, what I learned.
 - A: a photo of my living room (iPhone photo, evening light)
 - B: a simple line sketch of a living room (made with AI to simulate an architect's drawing)
 
-### Test 1: changing the floor in my living-room photo
+### Test 1: changing the floor in my living room photo
 
 | Try | Prompt | Mask | Result |
 | --- | --- | --- | --- |
-| 1 | "Replace the light wooden floor with a dark walnut wooden floor…" (verb first) | Part of the floor | Uneven colour, old floor still visible near the window and under the dining table, planks changed direction |
-| 2 | "Dark walnut wooden floor, wide planks, matte finish" (describes the result, from the in-app tip) | Whole floor, including under the furniture and over the chair legs | Even colour, the chair and table legs survived, the rest of the room unchanged. Colour came out slightly different than expected, not exactly walnut (maybe wrong lighting) |
+| 1 | "Replace the light wooden floor with a dark walnut wooden floor…" (verb first) | Used magic wand to automatically (and quickly) detect the floor aera | Uneven colour, patches, old floor still visible in multiple places. The colour came out slightly different than expected, not exactly walnut (maybe wrong lighting) |
+| 2 | "Dark chocolate wooden floor (changed the colour as walnut came out lighter than I expected), matte finish" (descring the desired result, from the in-app tip) | Marked the Whole floor manually, including under the furniture and over the chair legs | Even (and darker as I expected before) colour, the chair and table legs survived, the rest of the room unchanged. |
 
 | Original photo | Try 1 (fail) | Try 2 |
 | --- | --- | --- |
 | ![original](A_input_living-room-photo.jpg) | ![try 1](A_edit1_floor_verb-prompt_FAIL.png) | ![try 2](A_edit2_floor_descriptive-prompt.png) |
 
-**What I learned:** unny thing: the help page said start with a verb, but the app itself said don’t. The app seemed to be right
+**What I learned:** Funny thing: the help page “Edit by prompt” prompt article AND "Best practices for using the AI render editing toolkit" article both said the prompts should start with a verb, but the app (inside render studio) itself said the prompt should describe the end result, no verbs. The app seemed to be right.
 
 **Honest problem:** I changed two things at once (prompt style AND mask), I'm assuming changing both was necessary.
 
-### Test 2: does the style library change the geometry?
+### Test 2: playing with a sketch?
 
 | My sketch | With style | No style |
 | --- | --- | --- |
@@ -41,22 +41,26 @@ Red = my original sketch lines laid over the render:
 | --- | --- | --- |
 | ![overlay style](B_overlay_with-style.jpg) | ![overlay no style](B_overlay_no-style.jpg) | ![overlay daylight](B_overlay_style-plus-daylight.jpg) |
 
-I used Claude to run the measurement (to see the accuracy) and here’s how it works. It shows how many of my sketch lines still have a matching edge in each render (same image size, 3 tolerance levels):
+I used Claude to run the measurement (to see the accuracy) and here’s how it works. It shows how many of my sketch lines still have a matching edge in each render :
 
-| Render | Strict | Medium | Loose |
-| --- | --- | --- | --- |
-| No style | 71% | 74% | 79% |
-| Style + daylight edit | 52% | 62% | 75% |
-| With style | 40% | 53% | 68% |
+| Render | Sketch lines kept |
+| --- | --- |
+| No style | 74% |
+| Style + daylight edit | 62% |
+| With style | 53% |
+
+A sketch line counts as kept if the render has an edge within about 8 pixels of it, which is less than 1% of the image width.I also tried counting stricter and looser. The numbers changed,
+but the order stayed the same every time: no style was always
+the most accurate.
 
 **What I saw:**
 - With style: looks beautiful and realistic, but the door, floor lamp, side table and picture moved or grew, and the lamp shade changed shape.
-- No style: almost everything stays where I drew it, but the sofa looks like a stiff box. It copies my drawing too literally.
+- No style: almost everything stays where I drew it, but the sofa looks like a stiff box, but it was expected as the sketch was a little strange too (On of the things that would have required manual improving). It copies my drawing very literally (which is actually good).
 
 **The trade-off:** accurate vs pretty.
 
 **My mistake:** my first comparison used images of different sizes, which isn't fair. I re-ran it at the same size and the ranking stayed the same.
 
-**Open question:** the daylight edit (made from the styled render) moved things *closer* to my sketch. I don't know why yet.
+**Open question:** the daylight edit (made from the styled render) moved things *closer* to my sketch, compared to a styled render with different lighting). 
 
-**Next:** set up ComfyUI and try ControlNet. Can it keep the geometry AND make the furniture look real?
+**Next:** set up ComfyUI and try ControlNet.
