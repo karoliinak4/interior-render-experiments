@@ -58,4 +58,4 @@ the most accurate.
 
 **Next:** set up ComfyUI and try ControlNet.
 
-[← Back to the learning log](LEARNING_LOG.md)
+[← Back to the front page](README.md)
