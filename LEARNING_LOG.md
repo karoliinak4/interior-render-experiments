@@ -59,7 +59,6 @@ the most accurate.
 
 **The trade-off:** accurate vs pretty.
 
-**My mistake:** my first comparison used images of different sizes, which isn't fair. I re-ran it at the same size and the ranking stayed the same.
 
 **Open question:** the daylight edit (made from the styled render) moved things closer to my sketch than the styled render itself. Interesting.
 
