@@ -1,4 +1,4 @@
-# Day 2 — 10 Nov 2026
+# Experiment 2 — Nov 2026
 
 **Goal:** Learn ComfyUI basics before trying ControlNet. I wanted to understand what actually controls an AI image: the prompt, the seed, or both.
 
