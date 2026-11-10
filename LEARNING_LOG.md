@@ -18,8 +18,8 @@ What I tried, what broke, what I learned.
 
 | Try | Prompt | Mask | Result |
 | --- | --- | --- | --- |
-| 1 | "Replace the light wooden floor with a dark walnut wooden floor…" (verb first) | Used magic wand to automatically (and quickly) detect the floor aera | Uneven colour, patches, old floor still visible in multiple places. The colour came out slightly different than expected, not exactly walnut (maybe wrong lighting) |
-| 2 | "Dark chocolate wooden floor (changed the colour as walnut came out lighter than I expected), matte finish" (descring the desired result, from the in-app tip) | Marked the Whole floor manually, including under the furniture and over the chair legs | Even (and darker as I expected before) colour, the chair and table legs survived, the rest of the room unchanged. |
+| 1 | "Replace the light wooden floor with a dark walnut wooden floor…" (verb first) | Used magic wand to automatically (and quickly) detect the floor area | Uneven colour, patches, old floor still visible in multiple places. The colour came out slightly different than expected, not exactly walnut (maybe wrong lighting) |
+| 2 | "Dark chocolate wooden floor (changed the colour as walnut came out lighter than I expected), matte finish" (describing the desired result, from the in-app tip) | Marked the Whole floor manually, including under the furniture and over the chair legs | Even (and darker as I expected before) colour, the chair and table legs survived, the rest of the room unchanged. |
 
 | Original photo | Try 1 (fail) | Try 2 |
 | --- | --- | --- |
@@ -27,7 +27,7 @@ What I tried, what broke, what I learned.
 
 **What I learned:** Funny thing: the help page “Edit by prompt” prompt article AND "Best practices for using the AI render editing toolkit" article both said the prompts should start with a verb, but the app (inside render studio) itself said the prompt should describe the end result, no verbs. The app seemed to be right.
 
-**Honest problem:** I changed two things at once (prompt style AND mask), I'm assuming changing both was necessary.
+**Honest problem:** I changed three things at once: prompt style, colour description, and how I selected/marked the floor. Possibly all changes were necessary.
 
 ### Test 2: playing with a sketch?
 
@@ -55,12 +55,12 @@ the most accurate.
 
 **What I saw:**
 - With style: looks beautiful and realistic, but the door, floor lamp, side table and picture moved or grew, and the lamp shade changed shape.
-- No style: almost everything stays where I drew it, but the sofa looks like a stiff box, but it was expected as the sketch was a little strange too (On of the things that would have required manual improving). It copies my drawing very literally (which is actually good).
+- No style: almost everything stays where I drew it, but the sofa looks like a stiff box. That was expected as the sketch was a little strange too (One of the things that would have required manual improving). It copies my drawing very literally (which is actually good).
 
 **The trade-off:** accurate vs pretty.
 
 **My mistake:** my first comparison used images of different sizes, which isn't fair. I re-ran it at the same size and the ranking stayed the same.
 
-**Open question:** the daylight edit (made from the styled render) moved things *closer* to my sketch, compared to a styled render with different lighting). 
+**Open question:** Open question: the daylight edit (made from the styled render) moved things closer to my sketch than the styled render itself. Interesting.
 
 **Next:** set up ComfyUI and try ControlNet.
