@@ -8,5 +8,7 @@ First finding (Day 1): using a style from the style library made
 the render look more realistic but moved more objects. Without a
 style, about 74% of my sketch lines stayed in place; with a
 style, about 53%.
+## Daily notes
 
-Daily notes: [LEARNING_LOG.md](LEARNING_LOG.md)
+- [Day 1 — MyArchitectAI: floor edits and how a style moves the geometry](day-01.md)
+- [Day 2 — ComfyUI basics: seeds, prompt vs. seed, describing my sketch in words](day-02.md)
