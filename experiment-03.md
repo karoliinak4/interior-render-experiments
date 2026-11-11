@@ -118,16 +118,41 @@ What's still not right:
 - two round pillows sit on top of the sofa, exactly where I drew the cushion circles
 - a thin black bar behind the sofa, from my backrest line
 
-So it's the best balance so far, but not perfect yet. And it's only one seed, so I still need to check seed 1 and 2 before I really trust the 67%.
+So it's the best balance so far, but not perfect yet.
+
+**Seed check:** one seed isn't enough, so I ran the same setup with seed 1 and 2.
+
+My guess: all of them will land around 67%, plus or minus 5.
+
+| Seed 1 | Seed 2 |
+| --- | --- |
+| ![seed 1](D_combo_seed1.jpg) | ![seed 2](D_combo_seed2.jpg) |
+
+| Seed | Sketch lines kept |
+| --- | --- |
+| 0 | 67% |
+| 1 | 72% |
+| 2 | 61% |
+| **Average** | **about 67%** |
+
+My guess was almost right, seed 2 was just one point under. So the 67% was normal, not luck.
+
+The same things happen with every seed:
+- the layout always matches my sketch
+- the plant is always missing
+- my drawn backrest line turns into a glass panel or a bar behind the sofa
+- my cushion circles turn into pillows on top of the sofa
+
+These mistakes come from my simple sketch, not from bad luck. A better, more realistic input might fix them.
 
 ### What I learned
 
 - **Canny** sees every line: accurate, but it copies things it shouldn't (outlines, rings).
 - **Depth** sees only 3D shapes: realistic, but it loses flat details and thin objects.
-- **Both together** fix each other's blind spots: depth for the shapes, canny for the flat details. Best balance so far (67%).
+- **Both together** fix each other's blind spots: depth for the shapes, canny for the flat details. Best balance so far, about 67% on average over 3 seeds.
 - **Strength** mostly decides *where things are*, not *how real it looks*.
 - **One number is not enough.** I need the geometry score and my eye together, and I need to check more than one seed before trusting a difference.
 
-**Next I'd try:** run the combination on more seeds to check the result holds, play with the canny strength (maybe 0.20 or 0.40), and try a better input: a sketch with a normal camera view, like architects' screenshots from 3D software.
+**Next I'd try:** play with the canny strength (maybe 0.20 or 0.40), and try a better input: a sketch with a normal camera view, like architects' screenshots from 3D software.
 
 [← Back to the front page](README.md)
