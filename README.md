@@ -11,5 +11,6 @@ style, about 53%.
 
 ## Experiments
 
+- [Experiment 0 — Bootcamp work: a character from my own face, a realistic tech influencer, a product ad](experiment-00.md) (Nov)
 - [Experiment 1 — MyArchitectAI: floor edits and how a style moves the geometry](experiment-01.md) (9 Nov)
 - [Experiment 2 — ComfyUI basics: seeds, prompts and describing a sketch in words](experiment-02.md) (10 Nov)
