@@ -12,7 +12,7 @@ I ran the same prompt twice with seed 0.
 - I switched it to "fixed", set the seed back to 0 and ran again.
 - **Result:** exactly the same image, pixel for pixel.
 
-**What I learned:** same seed + same settings = same image. This matters because now I can change one thing at a time and know what caused the difference. On Day 1 in MyArchitectAI I couldn't do that.
+**What I learned:** same seed + same settings = same image. This matters because now I can change one thing at a time and know what caused the difference.
 
 ### Test 2: what does the seed change?
 
@@ -30,7 +30,10 @@ Prompt: "photorealistic modern living room, large window, wooden floor, soft day
 
 ### Test 3: can a very detailed prompt describe my sketch?
 
-I described my Day 1 sketch in words (window, three shelves, sofa with round cushions, door on the right etc.) and ran it with seed 0 and seed 1.
+I described my Experiment 1 sketch in a long prompt and ran it with seed 0 and seed 1.
+The prompt I used:
+
+> photorealistic living room seen straight on from the doorway, one-point perspective. Back wall: a two-pane window on the left half with sheer curtains on both sides, three floating wooden shelves on the right half. A grey three-seat fabric sofa with two round cushions against the back wall. A rectangular wooden coffee table in front of the sofa on a light rug. Left wall: a framed picture, a floor lamp and a small side table. Right wall: a white door. Light oak floor with planks running toward the back wall. Soft daylight.
 
 | My sketch | Seed 0 | Seed 1 |
 | --- | --- | --- |
