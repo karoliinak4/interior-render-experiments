@@ -1,6 +1,6 @@
 # Experiment 0 — Nov 2026
 
-** My work from AI video Bootcamp ** Three photos, each created with a different purpose. 
+**My work from AI Video Bootcamp.** Three photos, each created with a different purpose. 
 
 **Tools:** Midjourney, Promptwise (to test different models), Higgsfield, Claude and ChatGPT (to help write and improve prompts)
 
@@ -10,15 +10,17 @@
 
 <img src="E0_character-90s-from-my-face.jpg" alt="90s character from my own face" width="260">
 
-**Goal:** There are many trending short "romantic-comedy 90s style" videos on social media at the moment. I want to start creating my own. One of the basic step is character creation so I have to learn how to master photo creation in that particular style. To challenge it, I wanted on of the characters to have my facial features. The end goal: to be able to use that creation for videos The small photo in the corner is the real me, for comparison.
+**Goal:** There are many trending short "romantic-comedy 90s style" videos on social media at the moment. I want to start creating my own. One of the basic steps is character creation so I have to learn how to master photo creation in that particular style. To challenge it, I wanted one of the characters to have my facial features. The end goal: to be able to use that creation for videos. The small photo in the corner is the real me, for comparison.
 
-<!-- TODO Karoliina: roughly how many attempts? --> 10+
-<!-- TODO Karoliina: what went wrong at first (e.g. didn't look like me, face changed between images)? --> after testing and improving (with the help of Claude) multiple prompts to get the style right, getting the facial features right was a big challenge because Midjourey has many safety barriers.
-<!-- TODO Karoliina: what did you change that helped? --> Took the best result midjpurney gave me to nanobanana, it perfected the face to be recognisable 
+**Attempts:** 10+
+
+**What went wrong:** after testing and improving (with the help of Claude) multiple prompts to get the style right, getting the facial features right was a big challenge because Midjourney has many safety barriers.
+
+**What helped:** Took the best result Midjourney gave me to Nano Banana, it perfected the face to be recognisable.
 
 **How I judged it:** I compared her side by side with my own photo. And generally to other 90s style rom-com characters.
 
-**Still in progress:** the profile view and the body. To turn that photo into a video character I need many different ankles, full body etc.
+**Still in progress:** the profile view and the body. To turn that photo into a video character I need many different angles, full body etc.
 
 ---
 
@@ -30,9 +32,11 @@
 
 **Result:** it took many attempts to stop him looking AI. I'm still not 100% happy, but it's quite close to realism.
 
-<!-- TODO Karoliina: what made him look AI in the early attempts (skin, eyes, lighting, background)? --> In the beginning I used Midjourney but quickly realised it's not the best to create 100% realistic photos of humans. Moved over to Promptwise where I tested different image models, Realism Pro and GPT brought me success 
-<!-- TODO Karoliina: what fixed it? --> prompt and model improvement. 
-<!-- TODO Karoliina: did you ask for the SpaceX hoodie, or did the AI add it? Add one line about it either way. --> I asked for it, my prompt was quite specific.
+**What I tried:** In the beginning I used Midjourney but quickly realised it's not the best to create 100% realistic photos of humans. Moved over to Promptwise where I tested different image models, Realism Pro and GPT brought me success.
+
+**What helped:** prompt and model improvement.
+
+**The SpaceX hoodie:** I asked for it, my prompt was quite specific.
 
 ---
 
@@ -42,8 +46,9 @@
 
 **Goal:** to test product image creation with an invented ad idea: personalising your Oura ring with your initials. The idea was to keep the style of the brand and from technical point of view get the colours, shadows and overall look right and professional.
 
-<!-- TODO Karoliina: what was hard (ring shape, the gold reflections, letters on a curved surface)? --> getting all little details right was a little challenging but generally the easiest test.
-<!-- TODO Karoliina: what did you change that helped? --> all base images were created with midjourney, the final design idea in a prompt form is from ChatGPT.
+**What was hard:** getting all little details right was a little challenging but generally the easiest test.
+
+**How I made it:** all base images were created with Midjourney, the final design idea in a prompt form is from ChatGPT.
 
 ---
 
