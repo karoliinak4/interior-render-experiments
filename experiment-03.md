@@ -85,13 +85,49 @@ A depth map shows what's near and far instead of lines. Same strength (0.60), sa
 
 ---
 
+### Test 5: depth and canny together
+
+Canny was too strict and depth was too loose, so I wanted to try both at the same time. Depth for the 3D shapes, and canny on low strength just for the flat things depth can't see (window, door, floor lines).
+
+Setup: depth 0.60 + canny 0.30, same prompt, same seed (0). Claude wired the second ControlNet for me, I came up with the test and the hypothesis.
+
+**My hypothesis:** this is my golden middle point. I hoped for 65–70% geometry and a really realistic look (lights, shadows, textures looking real) with the least mistakes.
+
+| Canny 0.60 | Depth 0.60 | Depth 0.60 + canny 0.30 |
+| --- | --- | --- |
+| ![canny](D_canny_0.60_realism-prompt_seed0.jpg) | ![depth](D_depth_0.60_realism-prompt_seed0.jpg) | ![both](D_combo_depth0.60_canny0.30.jpg) |
+
+| Same prompt, seed 0 | Sketch lines kept |
+| --- | --- |
+| Canny 0.60 | 64% |
+| Depth 0.60 | 51% |
+| **Depth 0.60 + canny 0.30** | **67%** |
+
+![overlay both](D_overlay_combo.jpg)
+
+**Result:** 67%, so the geometry part of my hypothesis was right.
+
+What worked:
+- the camera and the room match my sketch again (no doorway frame like with depth)
+- the floor planks go towards the back wall again, canny fixed what depth couldn't see
+- window, door, picture, shelves and both lamps are where I drew them
+
+What's still not right:
+- realism is better than canny but a bit darker and less "photo" than depth alone
+- the plant is still missing
+- two round pillows sit on top of the sofa, exactly where I drew the cushion circles
+- a thin black bar behind the sofa, from my backrest line
+
+So it's the best balance so far, but not perfect yet. And it's only one seed, so I still need to check seed 1 and 2 before I really trust the 67%.
+
 ### What I learned
 
 - **Canny** sees every line: accurate, but it copies things it shouldn't (outlines, rings).
 - **Depth** sees only 3D shapes: realistic, but it loses flat details and thin objects.
+- **Both together** fix each other's blind spots: depth for the shapes, canny for the flat details. Best balance so far (67%).
 - **Strength** mostly decides *where things are*, not *how real it looks*.
 - **One number is not enough.** I need the geometry score and my eye together, and I need to check more than one seed before trusting a difference.
 
-**Next I'd try:** using both guides at once, depth for the 3D shapes and canny at a lower strength for windows, doors and floor lines. And a better input: a sketch with a normal camera view, like architects' screenshots from 3D software.
+**Next I'd try:** run the combination on more seeds to check the result holds, play with the canny strength (maybe 0.20 or 0.40), and try a better input: a sketch with a normal camera view, like architects' screenshots from 3D software.
 
 [← Back to the front page](README.md)
