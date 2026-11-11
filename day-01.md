@@ -1,4 +1,4 @@
-# Experiment 1 — 9 Nov 2026
+# Experiment 1 Nov 2026
 
 **Goal:** I wanted to see what happens when I give an AI interior renderer a photo of my own living room and a simple drawing.
 
