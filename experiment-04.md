@@ -2,11 +2,11 @@
 
 <!-- Draft written with Claude from Karoliina's notes. Karoliina: check the brother part and rewrite in your own words. -->
 
-**Goal:** how much better do AI models get at turning a real apartment into a 3D model in just a few months? I took one real apartment (my parents' home) and rebuilt it three times, each time with a newer model.
+**Goal:** After discovering Fable 5 easily creates 3d models, I wanted to test it out. I took one real apartment (my parents' home), created a 3d model of it and rebuilt it three times, each time with a newer model. The first result was quite impressive and fun to create so I want to keep doing the same with all new models. I want to see how much better do AI models get at turning a real apartment into a 3D model (sometimes in just a few months).
 
-**Input every time:** the floor plan and around 25 photos of the rooms. I left the address and the floor plan out of this page on purpose.
+**Input every time:** the floor plan (very basic) and around 25 photos of the rooms. I left the address and the floor plan out of this page on purpose.
 
-I worked on this with my brother. Round 3 used a toolkit he put together for Claude Code.
+I got guidance on this from my brother who is a tech engineer. Round 3 used a toolkit he put together for Claude Code.
 
 ---
 
@@ -25,15 +25,18 @@ I worked on this with my brother. Round 3 used a toolkit he put together for Cla
 | | Round 1 | Round 2 | Round 3 |
 |---|---|---|---|
 | **When** | July 2026 | September 2026 | November 2026 |
-| **Model** | Claude Fable 5 | GPT-6 Astra (Codex) | Claude Fable 5.2 |
-| **How** | simple prompt, the model drew everything with code in one web page | prompt written with ChatGPT, built in Blender | my brother's toolkit, Blender + Unreal Engine |
-| **What I saw** | right layout, but looks like a video game | massive step towards realism, but I noticed way more random things | another level, the "wow" moment |
+| **Model** | Claude Fable 5 | GPT-6 Astra | Claude Fable 5.2 |
+| **How** | simple prompt to Claude code: "here are images and a floor plan of an apartment please create a 3d model for me." | prompt to codex: " using blender mcp build a beautiful visual 3d model of this home  and make it hyperrealsitic and accurate.  jpg. then host it on some url so i could fly and move around the render. make it first person view."| prompt 1: 
+please create a hyperrealistic 3D model of this home. Look at the files and understand the struckture of this home. 
+Please use ../../3d toolkit for building it -  please use blender to model it and use unreal engine to make it real. Ensure to do proper AAA tier modelling - normal maps, lighting etc. Ensure the model has both fly around and first person view mode. no need for any clicking between rooms, just an exploration tool. "
+ |
+| **What I saw** | right layout, but looks like a video game | massive step towards realism, but I noticed many random things and little mistakes | another level, the "wow" moment |
 
-**Round 1:** the layout was right: sofa on the left, dining table by the window, TV on the wall. But everything is flat colours and blocky shapes, and part of the wall is missing so you see the sky.
+**Round 1:** the layout was right: sofa on the left, dining table by the window, TV on the wall. But everything is flat colours and akward shapes, and part of the wall is missing so you see the sky.
 
-**Round 2:** going from Round 1 to 2 was a massive step towards realism. Real materials and light bouncing off the walls. But I also noticed way more random things, like a strange half circle across the window, and the window is just white.
+**Round 2:** going from Round 1 to 2 was a massive step towards realism. Real materials and light bouncing off the walls. But I also noticed way more random things.
 
-**Round 3:** another level. Soft light, a real view outside, the wallpapers look like the real ones, the mirrors work and there are small lived-in details like a backpack and plants on a shelf.
+**Round 3:** another level. Soft light, a real view outside, the wallpapers look like the real ones and many other little details, it even wrote the right month in the calendar and didn't miss details on home electromins,also the mirrors work.
 
 ![Round 3 rooms](E4_round3_rooms.jpg)
 
@@ -41,8 +44,8 @@ I worked on this with my brother. Round 3 used a toolkit he put together for Cla
 
 ### What I learned
 
-- **It's not only the model.** Each round I changed three things at once: the model, the tools (code → Blender → Unreal Engine) and the prompt. So I can't say "Fable 5.2 is X times better than Fable 5". I can say the whole setup got much better.
-- **More realism brings new mistakes.** Round 1 was simple, so it had few weird things. Round 2 looked much more real, but more random things popped up.
+- **It's not only the model.** Each round I changed two things at once: the model and the prompt. So I can't say "Fable 5.2 is X times better than Fable 5". I can say the whole setup got much better.
+- **More realism brings new mistakes.** Round 1 was simple, so it had a few weird things. Round 2 looked much more real, but more random things popped up.
 - **The layout was right from the start.** Even Round 1 put the furniture in the right places. The big jumps were in light and materials.
 
 ### What I'd still fix
