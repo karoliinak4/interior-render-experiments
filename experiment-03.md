@@ -16,7 +16,7 @@ Canny turns my sketch into a line map, and the model has to follow the lines.
 
 **My guess:** more similar to the sketch, the mistakes from Experiment 2 won't repeat, and the result will look like the MyArchitectAI no-style render (accurate, but a stiff sofa).
 
-![canny strength 1.00](D_canny_strength-1.00.jpg)
+![canny strength 1.00](D_canny_strength-1.00.png)
 
 **Result:** 95% of my sketch lines kept. Three shelves, round cushions, curtains on both sides: every mistake from Experiment 2 was fixed. But it doesn't look real at all. It even paints my drawn outlines, and the sofa is made of boxes. My guess was right.
 
@@ -39,7 +39,7 @@ Same prompt, same seed (0), only the strength changes:
 
 | 0.75 | 0.60 | 0.50 | 0.25 |
 | --- | --- | --- | --- |
-| ![0.75](D_canny_strength-0.75.jpg) | ![0.60](D_canny_strength-0.60.jpg) | ![0.50](D_canny_strength-0.50.jpg) | ![0.25](D_canny_strength-0.25.jpg) |
+| ![0.75](D_canny_strength-0.75.png) | ![0.60](D_canny_strength-0.60.png) | ![0.50](D_canny_strength-0.50.png) | ![0.25](D_canny_strength-0.25.png) |
 
 Red = my sketch lines on top of the 0.60 render:
 
@@ -59,7 +59,7 @@ Same strength (0.60) and seed, but I added photo words to the end of the prompt:
 
 | Seed 0 | Seed 1 |
 | --- | --- |
-| ![realism prompt seed 0](D_canny_0.60_realism-prompt_seed0.jpg) | ![realism prompt seed 1](D_canny_0.60_realism-prompt_seed1.jpg) |
+| ![realism prompt seed 0](D_canny_0.60_realism-prompt_seed0.png) | ![realism prompt seed 1](D_canny_0.60_realism-prompt_seed1.png) |
 
 **Result:** much better light, darker corners and warmer shadows, more like a phone photo. But still kind of artificial. The rings stayed. Words can't fix something that comes from the sketch lines.
 
@@ -73,7 +73,7 @@ A depth map shows what's near and far instead of lines. Same strength (0.60), sa
 
 | Depth map | Result |
 | --- | --- |
-| ![depth map](D_depth-map.jpg) | ![depth 0.60](D_depth_0.60_realism-prompt_seed0.jpg) |
+| ![depth map](D_depth-map.jpg) | ![depth 0.60](D_depth_0.60_realism-prompt_seed0.png) |
 
 **Result:** realism improved impressively, but geometry didn't. 51% of my sketch lines kept (canny with the same settings: 64%). The picture became a window, the plant disappeared, the lamps were wrong, and the floor planks now run sideways.
 
@@ -95,7 +95,7 @@ Setup: depth 0.60 + canny 0.30, same prompt, same seed (0). Claude wired the sec
 
 | Canny 0.60 | Depth 0.60 | Depth 0.60 + canny 0.30 |
 | --- | --- | --- |
-| ![canny](D_canny_0.60_realism-prompt_seed0.jpg) | ![depth](D_depth_0.60_realism-prompt_seed0.jpg) | ![both](D_combo_depth0.60_canny0.30.jpg) |
+| ![canny](D_canny_0.60_realism-prompt_seed0.png) | ![depth](D_depth_0.60_realism-prompt_seed0.png) | ![both](D_combo_depth0.60_canny0.30.png) |
 
 | Same prompt, seed 0 | Sketch lines kept |
 | --- | --- |
@@ -126,7 +126,7 @@ My guess: all of them will land around 67%, plus or minus 5.
 
 | Seed 1 | Seed 2 |
 | --- | --- |
-| ![seed 1](D_combo_seed1.jpg) | ![seed 2](D_combo_seed2.jpg) |
+| ![seed 1](D_combo_seed1.png) | ![seed 2](D_combo_seed2.png) |
 
 | Seed | Sketch lines kept |
 | --- | --- |
