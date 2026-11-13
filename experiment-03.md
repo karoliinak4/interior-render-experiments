@@ -2,11 +2,11 @@
 
 <!-- Draft written with Claude. Karoliina: rewrite in your own words before applying. -->
 
-**Goal:** give the model my sketch as an image (not only words) with ControlNet. Can it keep my geometry AND look realistic?
+**Goal:** give the model my sketch as an image (not only as a prompt) and test out ControlNet. Can it keep my geometry AND look realistic?
 
-**Tool:** Comfy Cloud, template "Z-Image-Turbo Fun Union ControlNet". Same model as Experiment 2, so the only new thing is the guide.
+**Tool:** Comfy Cloud, template "Z-Image-Turbo Fun Union ControlNet". Same model as Experiment 2, the guide was new.
 
-**How I measured geometry:** I used Claude to run the measurement. It lays my sketch lines over the render and counts how many of them still have a matching edge nearby (about 8 pixels). Here it's fair, because the render starts from my sketch, so the camera is fixed. For realism I used my own eye.
+**How I measured geometry:** I used Claude to run the measurement. It puts my sketch lines over the render and counts how many of them still have a matching edge nearby. Here it's fair, because the render starts from my sketch, so the camera is fixed. For realism I used my perspective.
 
 ---
 
