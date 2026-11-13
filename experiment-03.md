@@ -2,9 +2,9 @@
 
 **Goal:** give the model my sketch as an image (not only as a prompt) and test out ControlNet. Can it keep my geometry AND look realistic?
 
-**Tool:** Comfy Cloud, template "Z-Image-Turbo Fun Union ControlNet". Same model as Experiment 2, the guide was new.
+**Tool:** Comfy Cloud, template "Z-Image-Turbo Fun Union ControlNet". Same model as in Experiment 2, only the guide was new.
 
-**How I measured geometry:** I used Claude to run the measurement. It puts my sketch lines over the render and counts how many of them still have a matching edge nearby. Here it's fair, because the render starts from my sketch, so the camera is fixed. For realism I used my perspective.
+**How I measured geometry:** I used Claude to run the measurement. It puts my sketch lines over the render and counts how many of them still have a matching edge nearby. Here it's fair, because the render starts from my sketch, so the camera is fixed. For realism, I used my own perspective.
 
 **How I worked:** this experiment was also for learning the tool, ComfyUI and how ControlNet guides work. I studied with Claude: I asked it to explain the concepts, to make me guess the result before every test, and to explain why things happened. I ran the tests in ComfyUI and judged the realism myself. Claude ran the geometry measurement.
 
@@ -34,7 +34,7 @@ Canny turns my sketch into a line map, and the model has to follow the lines.
 
 **Result:** 95% (measured by Claude) of my sketch lines are matching. Mistakes from Experiment 2 were fixed but it doesn't look real at all. My guess was right.
 
-**Lesson:** a great score can still be a bad image. Painting the lines themselves gives an amazing geometry score. From now I judge every result on two things: geometry (the number) and realism (my eye).
+**Lesson:** a great score can still be a bad image. Painting the lines themselves gives an amazing geometry score. From now on, I judge every result on two things: geometry (the number) and realism (my eye).
 
 ### Test 2: finding the right strength
 
@@ -59,17 +59,17 @@ Red = my sketch lines on top of the 0.60 strength canny render:
 
 ![overlay canny 0.60](D_overlay_canny-0.60.jpg)
 
-**Result:** my guess was right but surprisingly between 0.75 and 0.50 there's a big difference. I chose 0.60 as the best balance and locked it.
+**Result:** my guess was right, but surprisingly there's a big difference between 0.75 and 0.50. I chose 0.60 as the best balance and locked it.
 
 **Why 0.25 looks real and 0.60 doesn't:** at 0.25 the model chooses almost everything itself: the camera view, furniture sizes, details (books, a plant, a radiator), textures and the light. At 0.60 it still follows my sketch quite accurately. I guess part of the realism problem is my weak and basic sketch.
 
-(The measurement gave 0.25 a score of 59%, but visually it looks like a different room) 
+(The measurement gave 0.25 a score of 59%, but visually it looks like a different room.)
 
 ### Test 3: a prompt for realism
 
 Same strength (0.60) and seed, but I added photo words to the end of the prompt: *"Real interior photograph, natural afternoon sunlight through the window casting soft shadows on the floor, shot on a 35mm camera, lived-in and cosy, subtle imperfections, realistic textures on walls and fabrics."*
 
-**My guess:** the image will be much more realistic on high strength.
+**My guess:** the image will be much more realistic, even on high strength.
 
 | Seed 0 | Seed 1 |
 | --- | --- |
@@ -77,7 +77,7 @@ Same strength (0.60) and seed, but I added photo words to the end of the prompt:
 
 **Result:** more realistic light, darker corners and more intense shadows. Still a little artificial. The random rings stayed. A better prompt can't fix something that comes from the sketch lines.
 
-**Seed change:** the layout held with seed 1, the rings appeared again, so they were probably not bad luck. The geometry accuracy moved from 64% to 70% just because of the seed. So small differences (under ~6 points) can be just random.
+**Seed change:** the layout held with seed 1 and the rings appeared again, so they were probably not bad luck. The geometry accuracy moved from 64% to 70% just because of the seed. So small differences (under ~6 points) can be just random.
 
 ### Test 4: depth guide instead of canny
 
@@ -89,10 +89,9 @@ A depth map shows what's near and far instead of lines. I used the same strength
 | --- | --- |
 | ![depth map](D_depth-map.jpg) | ![depth 0.60](D_depth_0.60_realism-prompt_seed0.png) |
 
-**Result:** realism improved noticeably but geometry didn't. 51% of my sketch lines matched (with canny 64%). Errors: the picture became a window, the plant disappeared, the lamps were wrong, and the floor planks run sideways.
+**Result:** realism improved noticeably but geometry didn't. 51% of my sketch lines matched (canny with the same settings: 64%). Errors: the picture became a window, the plant disappeared, the lamps were wrong, and the floor planks run sideways.
 
-**Why:** the depth map shows the room and the items ( sofa, tables, lamp shades) but doesn't recognise flat items on a wall (window, door, picture, shelves) and things that are too small or thin. The floor is flat so it doesn't know which way it runs. The round cushions did come back as real cushions, rings are gone.
-
+**Why:** the depth map shows the room and the items (sofa, tables, lamp shades) but doesn't recognise flat items on a wall (window, door, picture, shelves) and things that are too small or thin. The floor is flat, so it doesn't know which way the planks run. The round cushions did come back as real cushions, rings are gone.
 
 ![overlay depth 0.60](D_overlay_depth-0.60.jpg)
 
@@ -102,9 +101,9 @@ A depth map shows what's near and far instead of lines. I used the same strength
 
 Canny was too strict and depth was too abstract. I wanted to try both at the same time.
 
-Setup: depth 0.60 + canny 0.30, same prompt, same seed (0). Depth holds the shapes, so I used canny on low strength (0.30), just for the flat things depth can't see (window, door, floor lines). After trying to wire it manually myself, I got an error and asked Claude to wire the second ControlNet for me, to fix my mistake. I came up with the hypothesis.
+Setup: depth 0.60 + canny 0.30, same prompt, same seed (0). Depth holds the shapes, so I used canny on low strength (0.30), just for the flat things depth can't see (window, door, floor lines). I tried to wire it manually myself, but my wiring didn't work, so I asked Claude to wire the second ControlNet for me. I came up with the hypothesis.
 
-**My hypothesis:** this is my golden middle point. I hoped for 65–70% geometry and a really realistic look (lights, shadows, textures looking real) with the minimal mistakes.
+**My hypothesis:** this is my golden middle point. I hoped for 65–70% geometry and a really realistic look (lights, shadows, textures looking real) with minimal mistakes.
 
 | Canny 0.60 | Depth 0.60 | Depth 0.60 + canny 0.30 |
 | --- | --- | --- |
@@ -118,22 +117,22 @@ Setup: depth 0.60 + canny 0.30, same prompt, same seed (0). Depth holds the shap
 
 ![overlay both](D_overlay_combo.jpg)
 
-**Result:** 67% geometry accuracy so I was right about that.
+**Result:** 67% geometry accuracy, so I was right about that.
 
 What worked:
-- the room generally matches my sketch.
-- the floor planks are correct and canny fixed what depth couldn't see.
-- Most items are matching the sketch.
+- the room generally matches my sketch
+- the floor planks are correct, canny fixed what depth couldn't see
+- most items match the sketch
 
 What didn't:
-- realism improved compared to canny but a bit too dark.
-- the plant is still missing.
-- two round pillows sit on top of the sofa, which is not a bad outcome actually but also not accurate.
-- a random black bar behind the sofa.
+- realism improved compared to canny, but it's a bit too dark
+- the plant is still missing
+- two round pillows sit on top of the sofa, which actually isn't a bad outcome, but also not accurate
+- a random black bar behind the sofa
 
-the best balance so far but not perfect.
+The best balance so far, but not perfect.
 
-**Seed check:** one seed isn't enough, I ran the same setup with seed 1 and 2.
+**Seed check:** one seed isn't enough, so I ran the same setup with seed 1 and 2.
 
 My guess: all of them will match around 65%, +/- 5.
 
@@ -148,7 +147,7 @@ My guess: all of them will match around 65%, +/- 5.
 | 2 | 61% |
 | **Average** | **about 67%** |
 
-My guess was almost right. Meaning 67% accuracy was normal, not luck.
+My guess was almost right. This means 67% accuracy was normal, not luck.
 
 The same things happen with all tested seeds:
 - the layout matches my sketch
@@ -156,15 +155,15 @@ The same things happen with all tested seeds:
 - my drawn backrest line turns into a glass panel or a bar behind the sofa
 - my cushion circles turn into pillows on top of the sofa
 
-These mistakes come from my simple and weak sketch, most probably. A better and more realistic input should fix them.
+These mistakes most probably come from my simple and weak sketch. A better and more realistic input should fix them.
 
 ### What I learned
 
-- **Canny** sees every line, especially on high strength: It's accurate, but doesn't always understand what things are.
-- **Depth** sees only 3D shapes: realistic but loses flat details and thin objects. Required a stronger input.
+- **Canny** sees every line, especially on high strength. It's accurate, but doesn't always understand what things are.
+- **Depth** sees only 3D shapes: realistic, but loses flat details and thin objects. It needs a stronger input.
 - **Both together** slightly fix each other's weaknesses: depth for the shapes, canny for the flat details. Best balance so far.
-- **Strength** decides *where things are* not *how real is it*.
-- **One number is not enough.** I need the geometry score and my own visual perspective and I need to check more than one seed before trusting a difference. Everything requires testing different versions and change of setting details.
+- **Strength** decides *where things are*, not *how real it looks*.
+- **One number is not enough.** I need the geometry score and my own visual perspective, and I need to check more than one seed before trusting a difference. Everything requires testing different versions and changing the settings.
 
 **Next I'd try:** MLSD instead of canny (alone and together with depth), and a more professional sketch like architects would use.
 
