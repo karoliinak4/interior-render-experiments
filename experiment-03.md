@@ -134,7 +134,7 @@ The best balance so far, but not perfect.
 
 **Seed check:** one seed isn't enough, so I ran the same setup with seed 1 and 2.
 
-My guess: all of them will land around the same as the first result (67%), +/- 5.
+My guess: the other seeds will score about the same as my first try (67%), maybe 5 more or 5 less.
 
 | Seed 1 | Seed 2 |
 | --- | --- |
