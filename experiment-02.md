@@ -4,6 +4,8 @@
 
 **Tool:** Comfy Cloud (5 free runs), Z-Image Turbo template (text-to-image, 1024 × 768, 8 steps)
 
+**Why this experiment:** this was my first time ever using ComfyUI, so it's a learning experiment. Before testing anything complicated, I wanted to understand the basic building blocks. I studied with Claude: I asked it to explain the concepts and to make me guess the result before every test. I ran the tests myself.
+
 ### Test 1: does the same seed give the same image?
 
 I ran the same prompt twice with seed 0.
