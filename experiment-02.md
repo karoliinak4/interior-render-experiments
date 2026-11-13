@@ -4,7 +4,7 @@
 
 **Tool:** Comfy Cloud (5 free runs), Z-Image Turbo template (text-to-image, 1024 × 768, 8 steps)
 
-**Why this experiment:** this was my first time ever using ComfyUI, so it's a learning experiment. Before testing anything complicated, I wanted to understand the basic building blocks. I studied with Claude: I asked it to explain the concepts and to make me guess the result before every test. I ran the tests myself.
+**Why this experiment:** after testing MyArchitectAI in Experiment 1, I wanted to understand what might be happening behind the scenes, the engine of a tool like that. So I started learning ComfyUI, where you build the whole process yourself step by step. This was my first time ever using it, so it's a learning experiment. Before testing anything complicated, I wanted to understand the basic building blocks. I studied with Claude: I asked it to explain the concepts and to make me guess the result before every test. I ran the tests myself.
 
 ### Test 1: does the same seed give the same image?
 
